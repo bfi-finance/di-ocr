@@ -1,9 +1,11 @@
 from google.cloud import vision
 from google.oauth2 import service_account
+from app.config import SERVICE_ACCOUNT_INFO
 import re
 
 def text_detection_google_vision(content:bytes):
-    credentials = service_account.Credentials.from_service_account_file("sturdy-quarter-361804-599639eb7da1.json")
+    # credentials = service_account.Credentials.from_service_account_file("sturdy-quarter-361804-599639eb7da1.json")
+    credentials = service_account.Credentials.from_service_account_info(SERVICE_ACCOUNT_INFO)
     client = vision.ImageAnnotatorClient(credentials=credentials)
     image = vision.Image(content=content)
     response = client.text_detection(
