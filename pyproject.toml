@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "di-ocr"
+version = "0.1.0"
+description = ""
+authors = ["Bernovan Munte <Bernovan.Munte@bfi.co.id>"]
+readme = "README.md"
+packages = [{include = "di_ocr"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.84.0"
+uvicorn = "^0.18.3"
+gunicorn = "^20.1.0"
+python-multipart = "^0.0.5"
+google-cloud-vision = "^3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
