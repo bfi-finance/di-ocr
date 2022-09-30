@@ -35,7 +35,7 @@ def get_text_plate(response):
 
         def get_plate_number(text):
             """Get text of plate number"""
-            pattern = re.compile(r"([A-Z]{1,2})\s?(\d{1,4})\s?([A-Z]{1,3})")
+            pattern = re.compile(r"^([A-Z]{1,2})\s?(\d{1,4})\s?([A-Z]{1,3})$", flags=re.MULTILINE)
             plate_number = pattern.search(text)
             if plate_number is not None:
                 return (
@@ -87,7 +87,7 @@ def get_text_stnk(response):
 
         def get_plate_number(text):
             """Get text of plate number"""
-            pattern = re.compile(r"([A-Z]{1,2})\s?(\d{1,4})\s?([A-Z]{1,3})")
+            pattern = re.compile(r"^([A-Z]{1,2})\s?(\d{1,4})\s?([A-Z]{1,3})$", flags=re.MULTILINE)
             plate_number = pattern.search(text)
             if plate_number is not None:
                 return (
